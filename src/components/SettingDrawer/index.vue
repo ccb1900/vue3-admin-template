@@ -59,7 +59,7 @@ const props = defineProps<{
 }>();
 const emit = defineEmits(['update:modelValue']);
 
-const visible = ref<boolean>(true);
+const visible = ref<boolean>(false);
 const handleShowDrawer = () => {
   visible.value = !visible.value;
 };

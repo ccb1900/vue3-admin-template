@@ -42,7 +42,8 @@ import { SmileOutlined, HeartOutlined } from '@ant-design/icons-vue';
 import RightContent from '../components/RightContent/index.vue';
 
 const router = useRouter();
-const { menuData } = getMenuData(clearMenuItem(router.getRoutes()));
+const routes = router.getRoutes()
+const { menuData } = getMenuData(clearMenuItem(routes));
 
 const state = reactive<Omit<RouteContextProps, 'menuData'>>({
   collapsed: false, // default collapsed
@@ -50,7 +51,7 @@ const state = reactive<Omit<RouteContextProps, 'menuData'>>({
   selectedKeys: [], // default selectedKeys
 });
 const proConfig = ref({
-  layout: 'top',
+  layout: 'left',
   fixedHeader: false,
   fixSiderbar: false,
   splitMenus: false,
